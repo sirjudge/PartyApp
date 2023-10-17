@@ -1,0 +1,46 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="PartyApp.MainWindow"
+        Title="PartyApp"
+        Background="Teal">
+    <StackPanel Name="PhotoBoothPanel">
+        <StackPanel Name="ChatContainer">
+            <StackPanel>
+                <Border Margin="5"
+                        CornerRadius="10"
+                        Background="Aquamarine">
+                    <TextBlock Margin="5"
+                               FontSize="24"
+                               HorizontalAlignment="Center"
+                               Text="Virtual Guest book"
+                               Foreground="Black">
+                    </TextBlock>
+                </Border>
+            </StackPanel>
+            <StackPanel Name="ChatPanel">
+                <Border Background="Azure" BorderBrush="Black" BorderThickness="2" Width="500" Height="200"
+                        HorizontalAlignment="Left">
+                    <TextBlock Name="ChatBox" Foreground="Black"></TextBlock>
+                </Border>
+            </StackPanel>
+            <StackPanel Name="InputPanel">
+                <Grid RowDefinitions="30,30,30,30" ColumnDefinitions="100,100">
+                    <Label Grid.Row="0" Grid.Column="0">Name</Label>
+                    <TextBox Name="MessageBox" Grid.Row="0" Grid.Column="1">test</TextBox>
+                    <Label Grid.Row="1" Grid.Column="0">Message</Label>
+                    <TextBox Name="MessageName" Grid.Row="1" Grid.Column="1">test</TextBox>
+                    <Button Grid.Row="2" Grid.Column="0" Click="SendMessageToChat">Submit</Button>
+                </Grid>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel>
+           <Border Background="Black">
+              <TextBlock>Photo-booth</TextBlock> 
+           </Border> 
+            <
+        </StackPanel>
+    </StackPanel>
+</Window>
