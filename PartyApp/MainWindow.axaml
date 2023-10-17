@@ -40,7 +40,7 @@
            <Border Background="Black">
               <TextBlock>Photo-booth</TextBlock> 
            </Border> 
-            <
         </StackPanel>
+        <Button Click="TakePhoto"></Button>
     </StackPanel>
 </Window>

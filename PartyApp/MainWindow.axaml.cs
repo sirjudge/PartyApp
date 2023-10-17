@@ -9,25 +9,22 @@ namespace PartyApp;
 public partial class MainWindow : Window
 {
     // This is gonna get real big, maybe use sqlite or sql docker container instead
-    private List<string> _chatMessages = new();
+    private List<Message> _chatMessages = new();
     public MainWindow()
     {
         InitializeComponent();
     }
 
+    private void TakePhoto(object sender, RoutedEventArgs e)
+    {
+        throw new NotImplementedException();
+    }
+    
     private void SaveMessage(Message message)
     {
-        
+        Messenger.SaveMessage(message);
     }
 
-    private bool ValidateMessage(Message message)
-    {
-        if (string.IsNullOrWhiteSpace(message.Text))
-            return false;
-        if (string.IsNullOrWhiteSpace(message.Author))
-            return false;
-        return true;
-    }
     
     public void SendMessageToChat(object sender, RoutedEventArgs e)
     {
@@ -35,12 +32,14 @@ public partial class MainWindow : Window
         var name = MessageName.Text;
         var message = new Message(messageText, name, DateTime.Now);
 
-        if (!ValidateMessage(message))
+        if (!Messenger.ValidateMessage(message))
         {
             Console.WriteLine("Invalid Message");
             return;
-        } 
-        _chatMessages.Add(message.ToString());
+        }
+        
+        _chatMessages.Add(message);
+       
         UpdateChatWindow();
     }
 
@@ -48,11 +47,6 @@ public partial class MainWindow : Window
     {
         MessageBox.Text = string.Empty;
         MessageName.Text = string.Empty;
-        
-        var stringBuilder = new StringBuilder();
-        foreach (var message in _chatMessages)
-            stringBuilder.AppendLine(message);
-
-        ChatBox.Text = stringBuilder.ToString();
+        ChatBox.Text = Messenger.MessageListToString(_chatMessages);
     }
 }

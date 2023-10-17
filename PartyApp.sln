@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartyApp", "PartyApp\PartyApp.csproj", "{E77E581F-B5F2-44EA-8A7F-0D247D9A728F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartyTests", "PartyTests\PartyTests.csproj", "{C6168096-7C8F-4483-83AC-C1F3C66F2B6F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{E77E581F-B5F2-44EA-8A7F-0D247D9A728F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E77E581F-B5F2-44EA-8A7F-0D247D9A728F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E77E581F-B5F2-44EA-8A7F-0D247D9A728F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6168096-7C8F-4483-83AC-C1F3C66F2B6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6168096-7C8F-4483-83AC-C1F3C66F2B6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6168096-7C8F-4483-83AC-C1F3C66F2B6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6168096-7C8F-4483-83AC-C1F3C66F2B6F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
