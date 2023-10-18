@@ -4,6 +4,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace PartyApp;
 
+/// <summary>
+/// DbContext class modeled after the example from the Microsoft docs:
+/// https://learn.microsoft.com/en-us/ef/core/get-started/overview/first-app?tabs=netcore-cli
+/// </summary>
 public class MessengerContext : DbContext
 {
     public string DbPath {get;}
