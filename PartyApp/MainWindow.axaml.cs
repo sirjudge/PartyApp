@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Text;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 
@@ -12,6 +11,7 @@ public partial class MainWindow : Window
     private List<Message> _chatMessages = new();
     public MainWindow()
     {
+        Console.WriteLine("Initialized MainWindow");
         InitializeComponent();
     }
 
@@ -39,12 +39,6 @@ public partial class MainWindow : Window
         }
         
         _chatMessages.Add(message);
-       
-        UpdateChatWindow();
-    }
-
-    public void UpdateChatWindow()
-    {
         MessageBox.Text = string.Empty;
         MessageName.Text = string.Empty;
         ChatBox.Text = Messenger.MessageListToString(_chatMessages);

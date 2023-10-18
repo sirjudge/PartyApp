@@ -4,11 +4,11 @@ namespace PartyApp;
 
 public class Message
 {
-    public string Text { get; set; }
-    public string Author { get; set; }
+    public string? Text { get; set; }
+    public string? Author { get; set; }
     public DateTime DateSubmitted { get; set; }
 
-    public Message(string text, string author, DateTime dateSubmitted)
+    public Message(string? text, string? author, DateTime dateSubmitted)
     {
        Text = text;
        Author = author;
