@@ -788,11 +788,11 @@
           "lib/netstandard2.0/_._": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Design/7.0.12": {
+      "Microsoft.EntityFrameworkCore.Design/7.0.13": {
         "type": "package",
         "dependencies": {
           "Humanizer.Core": "2.14.1",
-          "Microsoft.EntityFrameworkCore.Relational": "7.0.12",
+          "Microsoft.EntityFrameworkCore.Relational": "7.0.13",
           "Microsoft.Extensions.DependencyModel": "7.0.0",
           "Mono.TextTemplating": "2.2.1"
         },
@@ -810,10 +810,10 @@
           "build/net6.0/Microsoft.EntityFrameworkCore.Design.props": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Relational/7.0.12": {
+      "Microsoft.EntityFrameworkCore.Relational/7.0.13": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "7.0.12",
+          "Microsoft.EntityFrameworkCore": "7.0.13",
           "Microsoft.Extensions.Configuration.Abstractions": "7.0.0"
         },
         "compile": {
@@ -2970,10 +2970,10 @@
         "microsoft.entityframeworkcore.analyzers.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Design/7.0.12": {
-      "sha512": "5UoOLj+qJGkEoL379wi1cSq1bBCCZQZRO5w/wE89ZakQT6qx8juAlJLg4fFwfrg0tYWP12iUAholwcuDM38s7g==",
+    "Microsoft.EntityFrameworkCore.Design/7.0.13": {
+      "sha512": "3DlpSAxQhuxlhblySbM5ujxHALRi5m25ORPGnKKW4LCY1CPleCStdMSRnUB53vnhWDJUX12eIIvprajN++c2Ag==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.design/7.0.12",
+      "path": "microsoft.entityframeworkcore.design/7.0.13",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2981,21 +2981,21 @@
         "build/net6.0/Microsoft.EntityFrameworkCore.Design.props",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Design.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Design.xml",
-        "microsoft.entityframeworkcore.design.7.0.12.nupkg.sha512",
+        "microsoft.entityframeworkcore.design.7.0.13.nupkg.sha512",
         "microsoft.entityframeworkcore.design.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Relational/7.0.12": {
-      "sha512": "apLzFyjM3s/voBiaMCJPwIOk5SxA1N6GmSbhqthfbUDn8mX+kxZl4RXNdaoBLzPKfUg4EoqCtt0YON/g9YXruQ==",
+    "Microsoft.EntityFrameworkCore.Relational/7.0.13": {
+      "sha512": "lIms3oaIW7XiQy3bLUB2+hcSZ4ISmdh3HKKuNSnewS3wurYaopqBEhYaQdhZeW6itl3skWyqybPGGxIlJrKqFA==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.relational/7.0.12",
+      "path": "microsoft.entityframeworkcore.relational/7.0.13",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Relational.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Relational.xml",
-        "microsoft.entityframeworkcore.relational.7.0.12.nupkg.sha512",
+        "microsoft.entityframeworkcore.relational.7.0.13.nupkg.sha512",
         "microsoft.entityframeworkcore.relational.nuspec"
       ]
     },
@@ -5788,7 +5788,7 @@
       "Avalonia.Fonts.Inter >= 11.0.2",
       "Avalonia.Themes.Fluent >= 11.0.2",
       "Microsoft.EntityFrameworkCore >= 8.0.0-rc.2.23480.1",
-      "Microsoft.EntityFrameworkCore.Design >= 7.0.12",
+      "Microsoft.EntityFrameworkCore.Design >= 7.0.13",
       "Microsoft.EntityFrameworkCore.Sqlite >= 7.0.12",
       "SQLite >= 3.13.0"
     ]
@@ -5860,7 +5860,7 @@
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
             "target": "Package",
-            "version": "[7.0.12, )"
+            "version": "[7.0.13, )"
           },
           "Microsoft.EntityFrameworkCore.Sqlite": {
             "target": "Package",

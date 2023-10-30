@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "p80VGeup0KXfVPnaA/RacrFAT645XSoL+Z6WxmPUC61R8zufP6LScyYmaVmyt56pl5SJiVS5mejT1ywBA8jU7w==",
+  "dgSpecHash": "U/xdk/jSu5PAA9HX5Ta8t05rIecm7mv6FzmB7TooVEBaUt96Jf6qzC8x3cSUqVmi62gZGeljtJDlcHBOtzQ2Xg==",
   "success": true,
   "projectFilePath": "C:\\Solutions\\PartyApp\\PartyApp\\PartyApp.csproj",
   "expectedPackageFiles": [
@@ -37,8 +37,8 @@
     "C:\\Users\\nicoa\\.nuget\\packages\\microsoft.entityframeworkcore\\8.0.0-rc.2.23480.1\\microsoft.entityframeworkcore.8.0.0-rc.2.23480.1.nupkg.sha512",
     "C:\\Users\\nicoa\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\8.0.0-rc.2.23480.1\\microsoft.entityframeworkcore.abstractions.8.0.0-rc.2.23480.1.nupkg.sha512",
     "C:\\Users\\nicoa\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\8.0.0-rc.2.23480.1\\microsoft.entityframeworkcore.analyzers.8.0.0-rc.2.23480.1.nupkg.sha512",
-    "C:\\Users\\nicoa\\.nuget\\packages\\microsoft.entityframeworkcore.design\\7.0.12\\microsoft.entityframeworkcore.design.7.0.12.nupkg.sha512",
-    "C:\\Users\\nicoa\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\7.0.12\\microsoft.entityframeworkcore.relational.7.0.12.nupkg.sha512",
+    "C:\\Users\\nicoa\\.nuget\\packages\\microsoft.entityframeworkcore.design\\7.0.13\\microsoft.entityframeworkcore.design.7.0.13.nupkg.sha512",
+    "C:\\Users\\nicoa\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\7.0.13\\microsoft.entityframeworkcore.relational.7.0.13.nupkg.sha512",
     "C:\\Users\\nicoa\\.nuget\\packages\\microsoft.entityframeworkcore.sqlite\\7.0.12\\microsoft.entityframeworkcore.sqlite.7.0.12.nupkg.sha512",
     "C:\\Users\\nicoa\\.nuget\\packages\\microsoft.entityframeworkcore.sqlite.core\\7.0.12\\microsoft.entityframeworkcore.sqlite.core.7.0.12.nupkg.sha512",
     "C:\\Users\\nicoa\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\8.0.0-rc.2.23479.6\\microsoft.extensions.caching.abstractions.8.0.0-rc.2.23479.6.nupkg.sha512",

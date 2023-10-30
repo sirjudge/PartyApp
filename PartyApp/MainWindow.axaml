@@ -34,13 +34,15 @@
                     <TextBox Name="MessageName" Grid.Row="1" Grid.Column="1">test</TextBox>
                     <Button Grid.Row="2" Grid.Column="0" Click="SendMessageToChat">Submit</Button>
                 </Grid>
+                <TextBlock Name="messageErrorText" Foreground="Red" IsVisible="False">Error: Must submit a name and a message</TextBlock>
             </StackPanel>
         </StackPanel>
         <StackPanel>
            <Border Background="Black">
               <TextBlock>Photo-booth</TextBlock> 
-           </Border> 
+           </Border>
+            <Button Click="TakePhoto"></Button>
+            <Image></Image>
         </StackPanel>
-        <Button Click="TakePhoto"></Button>
     </StackPanel>
 </Window>
