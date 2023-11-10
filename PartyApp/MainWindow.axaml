@@ -31,9 +31,9 @@
             <StackPanel Name="InputPanel">
                 <Grid RowDefinitions="30,30,30,30" ColumnDefinitions="100,100">
                     <Label Grid.Row="0" Grid.Column="0">Name</Label>
-                    <TextBox Name="MessageName" Grid.Row="0" Grid.Column="1">test</TextBox>
+                    <TextBox Name="MessageName" Grid.Row="0" Grid.Column="1"></TextBox>
                     <Label Grid.Row="1" Grid.Column="0">Message</Label>
-                    <TextBox Name="MessageBox" Grid.Row="1" Grid.Column="1">test</TextBox>
+                    <TextBox Name="MessageBox" Grid.Row="1" Grid.Column="1"></TextBox>
                     <Button Grid.Row="2" Grid.Column="0" Click="SendMessageToChat">Submit</Button>
                 </Grid>
                 <TextBlock Name="MessageErrorText" Foreground="Red" IsVisible="False">Error: Must submit a name and a message</TextBlock>

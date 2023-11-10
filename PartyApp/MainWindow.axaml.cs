@@ -1,8 +1,12 @@
 using System;
 using System.Collections.Generic;
+using System.Net;
+using System.Net.Http;
 using System.Text;
+using System.Text.Json;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
+using PartyModels;
 
 namespace PartyApp;
 
@@ -10,9 +14,11 @@ public partial class MainWindow : Window
 {
     // This is gonna get real big, maybe use sqlite or sql docker container instead
     private List<Message> _chatMessages = new();
-    private readonly PartyAppRepository _partyAppRepository = new(false);
+    private HttpClient HttpClient;    
+    private readonly string _baseUrl = "http://localhost:5046/";
     public MainWindow()
     {
+        HttpClient = new HttpClient();
         Console.WriteLine("Initialized MainWindow");
         InitializeComponent();
         InitializeChatBox();
@@ -21,9 +27,12 @@ public partial class MainWindow : Window
     private void InitializeChatBox()
     {
         ChatBox.Text = string.Empty;
-        var messages = _partyAppRepository.GetMessages();
+   
         _chatMessages.Clear();
-        _chatMessages.AddRange(messages);
+
+        HttpClient.GetAsync(_baseUrl);
+        
+        _chatMessages.AddRange(new List<Message>(){});
         ChatBox.Text = MessageListToString(_chatMessages);
     }
     
@@ -44,9 +53,8 @@ public partial class MainWindow : Window
             
         MessageErrorText.IsVisible = false;
         var message = new Message(messageText, name, DateTime.Now);
-        var partyAppRepository = new PartyAppRepository();
-        partyAppRepository.InsertMessage(message);   
-        
+        var jsonContent = new StringContent(JsonSerializer.Serialize(message));
+        HttpClient.PostAsync($"{_baseUrl}/GetMessages", jsonContent);
         _chatMessages.Add(message);
         MessageBox.Text = string.Empty;
         MessageName.Text = string.Empty;
