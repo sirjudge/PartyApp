@@ -29,10 +29,41 @@
 
     <ItemGroup>
       <Folder Include="Models\" />
+      <Folder Include="obj\Debug\net8.0\Avalonia\" />
     </ItemGroup>
 
 
     <ItemGroup>
       <ProjectReference Include="..\PartyModels\PartyModels.csproj" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <AvaloniaXaml Remove="obj\**" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <Compile Remove="obj\**" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <EmbeddedResource Remove="obj\**" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <AdditionalFiles Remove="obj\**" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <AvaloniaResource Remove="obj\**" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <None Remove="obj\**" />
     </ItemGroup>
 </Project>
