@@ -41,12 +41,23 @@ public partial class MainWindow : Window
 
         var response = HttpClient.GetAsync($"{_baseUrl}/GetMessages").Result;
         if (response.StatusCode != HttpStatusCode.OK)
+        {
+            logger.Error($"Non ok status code:{response.StatusCode}, response:{response.ReasonPhrase}");
             return;
-       
+        }
+      
+        
         var responseString = response.Content.ReadAsStringAsync().Result;
-        logger.Information($"response was ok. ResponseString:{responseString}");
+        if (responseString is null or "[]")
+        {
+            logger.Warning("No messages returned from server"); 
+            return;
+        }
+      
+        logger.Information($"ResponseString:{responseString.ToString()}");
         var messages = JsonSerializer.Deserialize<List<Message>>(responseString); 
         _chatMessages.AddRange(messages); 
+        logger.Information($"response was ok. Added {messages.Count} messages to the chat list");
         ChatBox.Text = MessageListToString(_chatMessages);
     }
     
@@ -72,6 +83,7 @@ public partial class MainWindow : Window
         if (!response.IsSuccessStatusCode)
         {
             logger.Error($"response code from InsertMessage not ok:{response.StatusCode}, response:{response.ReasonPhrase}");
+            return;
         }
         
         logger.Information($"Successfully inserted message into database:{message.Guid}" );
