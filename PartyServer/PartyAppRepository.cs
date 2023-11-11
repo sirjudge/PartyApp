@@ -1,4 +1,6 @@
-﻿using System.Data;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Data.SQLite;
 using PartyModels;
 using Serilog;
@@ -74,9 +76,9 @@ public class PartyAppRepository
         insertMessageCommand.Parameters.AddWithValue("@Guid", message.Guid.ToString());
         var rowsInserted = insertMessageCommand.ExecuteNonQuery();
         if(rowsInserted == 0) 
-            Console.Error.WriteLine("Whoops, couldn't insert message into database");
+            Logger.Error("Whoops, couldn't insert message into database");
         else 
-            Console.WriteLine("Successfully inserted message into database");
+            Logger.Information("Successfully inserted message into database");
     }
 
     public List<Message> GetMessages()
@@ -108,9 +110,9 @@ public class PartyAppRepository
         deleteMessageCommand.Parameters.AddWithValue("@Id", message.Guid);
         var rowsDeleted = deleteMessageCommand.ExecuteNonQuery();
         if (rowsDeleted == 0)
-            Console.Error.WriteLine("Whoops, couldn't delete message from database");
+            Logger.Error("Whoops, couldn't delete message from database");
         else
-            Console.WriteLine("Successfully deleted message from database");
+            Logger.Information("Successfully deleted message from database");
     }
 
     public void UpvoteMessage(Guid messageGuid)

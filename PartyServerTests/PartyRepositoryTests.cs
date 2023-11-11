@@ -1,10 +1,25 @@
 ﻿using PartyModels;
 using PartyServer;
-
-namespace PhotoTakerTest;
+using Serilog;
+using Serilog.Core;
+namespace PartyServerApp;
 
 public class PartyRepositoryTests
 {
+    private Logger _logger;
+
+    [SetUp]
+    public void InitLogger()
+    {
+        if (_logger is null)
+        {
+           _logger = new LoggerConfiguration()
+                .WriteTo.Console()
+                .CreateLogger(); 
+        }
+    }
+    
+    
     [Test]
     public void InitializePartyRepository()
     {
