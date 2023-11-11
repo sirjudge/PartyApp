@@ -7,6 +7,7 @@ using System.Text.Json;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using PartyModels;
+using Serilog.Sinks.SystemConsole;
 
 namespace PartyApp;
 
@@ -14,8 +15,9 @@ public partial class MainWindow : Window
 {
     // This is gonna get real big, maybe use sqlite or sql docker container instead
     private List<Message> _chatMessages = new();
-    private HttpClient HttpClient;    
-    private readonly string _baseUrl = "http://localhost:5046/";
+    private HttpClient HttpClient;
+    private const string _baseUrl = "http://localhost:5046";
+
     public MainWindow()
     {
         HttpClient = new HttpClient();
@@ -23,16 +25,22 @@ public partial class MainWindow : Window
         InitializeComponent();
         InitializeChatBox();
     }
-
+    
     private void InitializeChatBox()
     {
+        Console.WriteLine("InitializeChatBox called");
         ChatBox.Text = string.Empty;
    
         _chatMessages.Clear();
 
-        HttpClient.GetAsync(_baseUrl);
-        
-        _chatMessages.AddRange(new List<Message>(){});
+        var response = HttpClient.GetAsync($"{_baseUrl}/GetMessages").Result;
+        if (response.StatusCode != HttpStatusCode.OK)
+            return;
+       
+        var responseString = response.Content.ReadAsStringAsync().Result;
+        Console.WriteLine($"response was ok. ResponseString:{responseString}");
+        var messages = JsonSerializer.Deserialize<List<Message>>(responseString); 
+        _chatMessages.AddRange(messages); 
         ChatBox.Text = MessageListToString(_chatMessages);
     }
     
@@ -41,7 +49,7 @@ public partial class MainWindow : Window
         PhotoTaker.TakePhoto();
     }
     
-    public void SendMessageToChat(object sender, RoutedEventArgs e)
+    public void LogMessageToDb(object sender, RoutedEventArgs e)
     {
         var messageText = MessageBox.Text;
         var name = MessageName.Text;

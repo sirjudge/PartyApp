@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "97OH82rHvKxoPDStNCpIc3zvDcFub36OhSXcFNgekiv5dEhsR5RlibHAXG337uAMj94gNFjBHqQUNOdNINesTw==",
+  "dgSpecHash": "jdasE+5d/DQLfx0fvHFd0afEP7oHQNPaP/zY/8dPKSyXRaq72qtWprjXw5R8PRCc41DiRwXPWon+M/hvqpdqfA==",
   "success": true,
   "projectFilePath": "C:\\Solutions\\PartyApp\\PartyTests\\PartyTests.csproj",
   "expectedPackageFiles": [
@@ -77,6 +77,8 @@
     "C:\\Users\\nicoa\\.nuget\\packages\\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\nicoa\\.nuget\\packages\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\nicoa\\.nuget\\packages\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
+    "C:\\Users\\nicoa\\.nuget\\packages\\serilog\\3.1.0\\serilog.3.1.0.nupkg.sha512",
+    "C:\\Users\\nicoa\\.nuget\\packages\\serilog.sinks.console\\5.0.0\\serilog.sinks.console.5.0.0.nupkg.sha512",
     "C:\\Users\\nicoa\\.nuget\\packages\\skiasharp\\2.88.3\\skiasharp.2.88.3.nupkg.sha512",
     "C:\\Users\\nicoa\\.nuget\\packages\\skiasharp.nativeassets.linux\\2.88.3\\skiasharp.nativeassets.linux.2.88.3.nupkg.sha512",
     "C:\\Users\\nicoa\\.nuget\\packages\\skiasharp.nativeassets.macos\\2.88.3\\skiasharp.nativeassets.macos.2.88.3.nupkg.sha512",

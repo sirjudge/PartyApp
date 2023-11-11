@@ -16,7 +16,9 @@
           "Microsoft.EntityFrameworkCore": "8.0.0-rc.2.23480.1",
           "Microsoft.EntityFrameworkCore.Design": "7.0.13",
           "Microsoft.EntityFrameworkCore.Sqlite": "7.0.12",
-          "SQLite": "3.13.0"
+          "PartyModels": "1.0.0",
+          "SQLite": "3.13.0",
+          "Serilog.Sinks.Console": "5.0.0"
         },
         "runtime": {
           "PartyApp.dll": {}
@@ -804,6 +806,25 @@
           }
         }
       },
+      "Serilog/3.1.0": {
+        "runtime": {
+          "lib/net7.0/Serilog.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "3.1.0.0"
+          }
+        }
+      },
+      "Serilog.Sinks.Console/5.0.0": {
+        "dependencies": {
+          "Serilog": "3.1.0"
+        },
+        "runtime": {
+          "lib/net7.0/Serilog.Sinks.Console.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.0.0"
+          }
+        }
+      },
       "SkiaSharp/2.88.3": {
         "dependencies": {
           "SkiaSharp.NativeAssets.Win32": "2.88.3",
@@ -1319,6 +1340,14 @@
             "fileVersion": "0.15.0.0"
           }
         }
+      },
+      "PartyModels/1.0.0": {
+        "dependencies": {
+          "Serilog.Sinks.Console": "5.0.0"
+        },
+        "runtime": {
+          "PartyModels.dll": {}
+        }
       }
     }
   },
@@ -1685,6 +1714,20 @@
       "path": "mono.texttemplating/2.2.1",
       "hashPath": "mono.texttemplating.2.2.1.nupkg.sha512"
     },
+    "Serilog/3.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UPJGG8Hz12obhtAELHb0q83j0YpO1vGCypUbH0P4wMZnrpcqmrSLhHkZ/4Ojc+iNVpLwZ/wPBVC3lwSzzoZ/MQ==",
+      "path": "serilog/3.1.0",
+      "hashPath": "serilog.3.1.0.nupkg.sha512"
+    },
+    "Serilog.Sinks.Console/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-IZ6bn79k+3SRXOBpwSOClUHikSkp2toGPCZ0teUkscv4dpDg9E2R2xVsNkLmwddE4OpNVO3N0xiYsAH556vN8Q==",
+      "path": "serilog.sinks.console/5.0.0",
+      "hashPath": "serilog.sinks.console.5.0.0.nupkg.sha512"
+    },
     "SkiaSharp/2.88.3": {
       "type": "package",
       "serviceable": true,
@@ -2013,6 +2056,11 @@
       "sha512": "sha512-QVo/Y39nTYcCKBqrZuwHjXdwaky0yTQPIT3qUTEEK2MZfDtZWrJ2XyZ59zH8LBgB2fL5cWaTuP2pBTpGz/GeDQ==",
       "path": "tmds.dbus.protocol/0.15.0",
       "hashPath": "tmds.dbus.protocol.0.15.0.nupkg.sha512"
+    },
+    "PartyModels/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

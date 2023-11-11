@@ -34,7 +34,7 @@
                     <TextBox Name="MessageName" Grid.Row="0" Grid.Column="1"></TextBox>
                     <Label Grid.Row="1" Grid.Column="0">Message</Label>
                     <TextBox Name="MessageBox" Grid.Row="1" Grid.Column="1"></TextBox>
-                    <Button Grid.Row="2" Grid.Column="0" Click="SendMessageToChat">Submit</Button>
+                    <Button Grid.Row="2" Grid.Column="0" Click="LogMessageToDb">Submit</Button>
                 </Grid>
                 <TextBlock Name="MessageErrorText" Foreground="Red" IsVisible="False">Error: Must submit a name and a message</TextBlock>
             </StackPanel>

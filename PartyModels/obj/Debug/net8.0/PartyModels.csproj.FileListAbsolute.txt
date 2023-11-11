@@ -10,3 +10,4 @@ C:\Solutions\PartyApp\PartyModels\obj\Debug\net8.0\PartyModels.dll
 C:\Solutions\PartyApp\PartyModels\obj\Debug\net8.0\refint\PartyModels.dll
 C:\Solutions\PartyApp\PartyModels\obj\Debug\net8.0\PartyModels.pdb
 C:\Solutions\PartyApp\PartyModels\obj\Debug\net8.0\ref\PartyModels.dll
+C:\Solutions\PartyApp\PartyModels\obj\Debug\net8.0\PartyModels.csproj.AssemblyReference.cache

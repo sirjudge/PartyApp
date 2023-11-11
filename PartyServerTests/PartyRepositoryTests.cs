@@ -1,6 +1,5 @@
-﻿
-using PartyApp;
-using PartyModels;
+﻿using PartyModels;
+using PartyServer;
 
 namespace PhotoTakerTest;
 

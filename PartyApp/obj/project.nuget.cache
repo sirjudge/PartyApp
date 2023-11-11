@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "pJ6QcyHA1byRx4OVrIgyBjYVGDRYf8+LRnZNw5zYfPkJWIIxa14p3cjvlmD2y7LKa4oq6HesIMd9auF2Xrl76w==",
+  "dgSpecHash": "zvWR+mvWiLDQJu4HGjzGQR0CETIRmGlhJ9KCq5sGMVWrs/NsUeSqfk3zLRqPe+dL5BGqlszSFJmKCubvIjEhiw==",
   "success": true,
   "projectFilePath": "C:\\Solutions\\PartyApp\\PartyApp\\PartyApp.csproj",
   "expectedPackageFiles": [
@@ -55,6 +55,8 @@
     "C:\\Users\\nicoa\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\nicoa\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\nicoa\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\nicoa\\.nuget\\packages\\serilog\\3.1.0\\serilog.3.1.0.nupkg.sha512",
+    "C:\\Users\\nicoa\\.nuget\\packages\\serilog.sinks.console\\5.0.0\\serilog.sinks.console.5.0.0.nupkg.sha512",
     "C:\\Users\\nicoa\\.nuget\\packages\\skiasharp\\2.88.3\\skiasharp.2.88.3.nupkg.sha512",
     "C:\\Users\\nicoa\\.nuget\\packages\\skiasharp.nativeassets.linux\\2.88.3\\skiasharp.nativeassets.linux.2.88.3.nupkg.sha512",
     "C:\\Users\\nicoa\\.nuget\\packages\\skiasharp.nativeassets.macos\\2.88.3\\skiasharp.nativeassets.macos.2.88.3.nupkg.sha512",

@@ -179,3 +179,7 @@ C:\Solutions\PartyApp\PartyApp\obj\Debug\net8.0\PartyApp.pdb
 C:\Solutions\PartyApp\PartyApp\obj\Debug\net8.0\PartyApp.csproj.CopyComplete
 C:\Solutions\PartyApp\PartyApp\obj\Debug\net8.0\PartyApp.genruntimeconfig.cache
 C:\Solutions\PartyApp\PartyApp\obj\Debug\net8.0\ref\PartyApp.dll
+C:\Solutions\PartyApp\PartyApp\bin\Debug\net8.0\PartyModels.dll
+C:\Solutions\PartyApp\PartyApp\bin\Debug\net8.0\PartyModels.pdb
+C:\Solutions\PartyApp\PartyApp\bin\Debug\net8.0\Serilog.dll
+C:\Solutions\PartyApp\PartyApp\bin\Debug\net8.0\Serilog.Sinks.Console.dll

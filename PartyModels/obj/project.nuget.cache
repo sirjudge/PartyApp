@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "SRyW+7rZwSGo5ta002f54qFJAagMTrXRI0PrxQdPndFgaJ/AY9Uoa21uXo1jv+Mqu+llofzq1Mh8P8qXN9fZXw==",
+  "dgSpecHash": "3IWf9VUck73gVTzhk7JVGmBWzisoQnAxl94hl31LnhkVLfFGaj+2ZcWbZVNMoifCLUgqDDrEjTTg3j+3+Kp+iw==",
   "success": true,
   "projectFilePath": "C:\\Solutions\\PartyApp\\PartyModels\\PartyModels.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\nicoa\\.nuget\\packages\\serilog\\3.1.0\\serilog.3.1.0.nupkg.sha512",
+    "C:\\Users\\nicoa\\.nuget\\packages\\serilog.sinks.console\\5.0.0\\serilog.sinks.console.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
