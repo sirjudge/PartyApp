@@ -23,7 +23,7 @@ public class PartyRepositoryTests
     [Test]
     public void InitializePartyRepository()
     {
-        var repo = new PartyAppRepository();
+        var repo = new PartyAppRepository(_logger);
         Assert.NotNull(repo);
         Assert.True(File.Exists("party.db"));
     }
@@ -31,7 +31,7 @@ public class PartyRepositoryTests
     [Test]
     public void InsertValidMessage()
     {
-        var repo = new PartyAppRepository();
+        var repo = new PartyAppRepository(_logger);
         var message = new Message("messageText", "messageAuthor", DateTime.Now);
         repo.InsertMessage(message);
     }
@@ -42,7 +42,7 @@ public class PartyRepositoryTests
         try
         {
             var message = new Message(null, null, DateTime.Now);
-            var repo = new PartyAppRepository();
+            var repo = new PartyAppRepository(_logger);
             repo.InsertMessage(message);
             Assert.Fail("Exception should have been thrown during validation");
         }
@@ -55,7 +55,7 @@ public class PartyRepositoryTests
     [Test]
     public void GetMessage()
     {
-        var repo = new PartyAppRepository();
+        var repo = new PartyAppRepository(_logger);
         var messages = repo.GetMessages();
         Assert.That(messages,Is.Not.Empty);
         foreach (var message in messages)
