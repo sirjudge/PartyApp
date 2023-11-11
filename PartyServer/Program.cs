@@ -1,77 +1,96 @@
-using System;
-using System.Collections.Generic;
 using System.Text.Json;
-using Microsoft.AspNetCore.Builder;
 using PartyModels;
 using PartyServer;
 using Serilog;
-using Serilog.Core;
-using Serilog.Sinks.SystemConsole;
 using Serilog.Sinks.SystemConsole.Themes;
+
+// Dev Note:
+// This uses .NET core 8 minimal API
+//https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis?view=aspnetcore-8.0
 
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
+
 var logger = new LoggerConfiguration()
     .WriteTo.Console(theme: SystemConsoleTheme.Literate)
     .CreateLogger();
 
-var repo = new PartyAppRepository(logger,false);
+var repo = new PartyAppRepository(logger);
 
-app.MapGet("/GetMessages", () =>
+if (app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+    logger.Debug("In Development environment");
+}
+else logger.Debug("Not in Development environment");
+
+app.MapGet("/GetMessages", async () =>
 {
     try
     {
         var messages = repo.GetMessages();
-        logger.Information($"Returning {messages.Count} # of messages");
-        return JsonSerializer.Serialize(messages);
+        return Results.Json(JsonSerializer.Serialize(messages));
     }
     catch (Exception e)
     {
-        Console.Error.WriteLine("Error occurred during runtime: " + e.Message);
-        return JsonSerializer.Serialize(new List<Message>());
+        var errorText = "Error occurred during runtime could not Get message: " + e.Message + " StackTrace:" +
+                        e.StackTrace;
+        logger.Error(errorText);
+        return Results.Problem(errorText);
     }
 });
 
-app.MapPost("/InsertMessage", async (Message message) =>
+app.MapPost("/InsertMessage", (Message message) =>
 {
     try
-    {
+    { 
         repo.InsertMessage(message);
+        return Task.FromResult(Results.Ok());
     }
     catch (Exception e)
     {
-        logger.Error("Error occurred during runtime: " + e.Message);
+        var errorText = "Error occurred during runtime could not insert message: " + e.Message + " StackTrace:" +
+                        e.StackTrace;
+        logger.Error(errorText);
+        return Task.FromResult(Results.Problem(errorText));
     }
 });
 
-app.MapPost("/Upvote", async (Guid messageGuid) =>
+app.MapPost("/Upvote", (Guid messageGuid) =>
 {
     try
     {
         repo.UpvoteMessage(messageGuid);
+        return Task.FromResult(Results.Ok("success"));
     }
     catch (Exception e)
     {
-        logger.Error("Error occurred during runtime: " + e.Message);
+        var errorText = "Error occurred during runtime could not upvote message: " + e.Message + " StackTrace:" +
+                        e.StackTrace;
+        logger.Error(errorText);
+        return Task.FromResult(Results.Problem(errorText));
     }
 });
 
-app.MapPost("/Downvote", async (Guid messageGuid) =>
+app.MapPost("/Downvote", (Guid messageGuid) =>
 {
     try
     {
         repo.DownvoteMessage(messageGuid);
+        return Task.FromResult(Results.Ok("success"));
     }
     catch (Exception e)
     {
-        logger.Error("Error occurred during runtime: " + e.Message);
+        var errorText = "Error occurred during runtime: " + e.Message + " StackTrace:" + e.StackTrace;
+        logger.Error(errorText);
+        throw;
     }
 });
 
 app.MapGet("/HealthCheck", () =>
 {
     logger.Information("Health check called successfully");
-    return "OK";
+    return Results.Ok("success");
 });
 
 app.Run();

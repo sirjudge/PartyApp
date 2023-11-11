@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 using System.Data.SQLite;
 using PartyModels;
-using Serilog;
 using Serilog.Core;
 
 namespace PartyServer;
@@ -13,17 +10,17 @@ public class PartyAppRepository
 {
     private readonly string SqliteConnectionString;
     private readonly Logger Logger;
-    public PartyAppRepository(Logger logger, bool reinitializeDbFile = false)
+    public PartyAppRepository(Logger logger)
     {
         Logger = logger;
         SqliteConnectionString = "Data Source=party.db";
         using var connection = new SQLiteConnection(SqliteConnectionString);
         connection.Open();
-        InitMessageDb(connection, reinitializeDbFile);
+        InitMessageDb(connection);
         connection.Close();
     }
 
-    private void InitMessageDb(SQLiteConnection connection, bool reinitializeDbFile)
+    private void InitMessageDb(SQLiteConnection connection)
     {
         const string tableExistsQueryString = 
             "select name " +
@@ -46,6 +43,8 @@ public class PartyAppRepository
             createMessageTableCommand.ExecuteNonQuery();
         }
 
+        /*
+         TODO: this is logic to clear the db out before running
         if (!reinitializeDbFile)
         {
             Logger.Information("Not reinitializing db file, returning early");
@@ -56,6 +55,7 @@ public class PartyAppRepository
         using var deleteCommand = new SQLiteCommand(deleteQuery, connection);
         deleteCommand.ExecuteNonQuery();
         Logger.Information("Deleted all rows from Message table");
+        */
     }
 
     public void InsertMessage(Message message)
@@ -83,15 +83,26 @@ public class PartyAppRepository
 
     public List<Message> GetMessages()
     {
+        Logger.Information($"SqliteConnectionString:{SqliteConnectionString}");
         using var connection = new SQLiteConnection(SqliteConnectionString);
-        const string selectMessages = "SELECT * FROM Message";
-        using var selectMessagesCommand = new SQLiteCommand(selectMessages, connection);
-        selectMessagesCommand.CommandType = CommandType.Text;
         connection.Open();
+        Logger.Information("Opened connection to party db");
+        
+        using var selectMessagesCommand = new SQLiteCommand("SELECT * FROM Message", connection);
+        selectMessagesCommand.CommandType = CommandType.Text;
         using var reader = selectMessagesCommand.ExecuteReader();
+        Logger.Information("Executed reader on party db");
         var messages = new List<Message>();
+
+        if (!reader.HasRows)
+        {
+            Logger.Warning("Could nto find any rows");
+            return messages;
+        }
+        
         while (reader.Read())
         {
+            Logger.Debug("Reading message row from database");
             var message = new Message(reader.GetString(1), reader.GetString(2), DateTime.Parse(reader.GetString(3)));
             messages.Add(message);
         }

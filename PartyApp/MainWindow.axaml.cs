@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json;
 using Avalonia.Controls;
@@ -68,10 +69,9 @@ public partial class MainWindow : Window
         var message = new Message(messageText, name, DateTime.Now);
         var jsonContent = new StringContent(JsonSerializer.Serialize(message));
         var response = HttpClient.PostAsync($"{_baseUrl}/InsertMessage", jsonContent).Result;
-        if (response.StatusCode != HttpStatusCode.OK)
+        if (!response.IsSuccessStatusCode)
         {
-            logger.Error("Error occurred during runtime: " + response.Content.ReadAsStringAsync().Result);
-            return;    
+            logger.Error($"response code from InsertMessage not ok:{response.StatusCode}, response:{response.ReasonPhrase}");
         }
         
         logger.Information($"Successfully inserted message into database:{message.Guid}" );
