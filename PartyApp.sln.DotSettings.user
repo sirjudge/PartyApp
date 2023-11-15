@@ -1,8 +1,4 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=7def7e82_002D5a7b_002D4e02_002Dab35_002D3f1b8d5e72e7/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="GetMessage" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;xUnit::C6168096-7C8F-4483-83AC-C1F3C66F2B6F::net8.0::PhotoTakerTest.PartyRepositoryTests.GetMessage&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::C6168096-7C8F-4483-83AC-C1F3C66F2B6F::net8.0::PhotoTakerTest.PartyRepositoryTests.InsertValidMessage&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::C6168096-7C8F-4483-83AC-C1F3C66F2B6F::net8.0::PhotoTakerTest.PartyRepositoryTests.InsertInvalidMessageFails&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=0c2b4955_002Dc472_002D410a_002D9a84_002D0f5b7b2d1b66/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from Solution" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Solution /&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
