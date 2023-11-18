@@ -5,6 +5,7 @@ namespace PartyModels;
 
 public class Message
 {
+    public int MessageId { get; set; }
     public string? Text { get; set; }
     public string? Author { get; set; }
     public DateTime DateSubmitted { get; set; }
@@ -12,6 +13,8 @@ public class Message
     public int NumberUpvotes { get; set; }
     public int NumberDownvotes { get; set; }
 
+    public Message(){}
+    
     public Message(string? text, string? author, DateTime dateSubmitted)
     {
         Text = text;
@@ -22,11 +25,11 @@ public class Message
 
     public Message(IDataReader reader, Logger logger)
     {
-        Text = reader.GetString(0);
-        Author = reader.GetString(1);
+        MessageId = reader.GetInt16(reader.GetOrdinal("Id"));
+        Text = reader.GetString(reader.GetOrdinal("Text"));
+        Author = reader.GetString(reader.GetOrdinal("Author"));
         
-        //TODO: solve this issue later
-        var dateTimeString = reader.GetString(2);
+        var dateTimeString = reader.GetString(reader.GetOrdinal("DateSubmitted"));
         if (DateTime.TryParse(dateTimeString, out var parsedDate)) DateSubmitted = parsedDate;
         else
         {
@@ -35,8 +38,7 @@ public class Message
             DateSubmitted = DateTime.Now;
         }
 
-        //TODO: Solve this later as well
-        var guidString = reader.GetString(3);
+        var guidString = reader.GetString(reader.GetOrdinal("Guid"));
         if (Guid.TryParse(guidString, out var parsedGuid)) Guid = parsedGuid;
         else
         {
@@ -46,7 +48,7 @@ public class Message
     }
     
     public override string ToString()
-        =>  $"{Author}-{DateSubmitted}:{Text}";
+        =>  $"{Author}-{DateSubmitted.ToShortTimeString()}:{Text}";
     
     public void AddUpvote() => NumberUpvotes++;
     public void AddDownvote() => NumberDownvotes++;

@@ -1,14 +1,9 @@
 using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Options;
 using PartyModels;
 using PartyServer;
 using Serilog;
 using Serilog.Sinks.SystemConsole.Themes;
-
-// Dev Note:
-// This uses .NET core 8 minimal API
-//https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis?view=aspnetcore-8.0
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.ConfigureHttpJsonOptions(options =>
@@ -19,6 +14,7 @@ builder.Services.ConfigureHttpJsonOptions(options =>
 
 var app = builder.Build();
 
+
 var logger = new LoggerConfiguration()
     .WriteTo.Console(theme: SystemConsoleTheme.Literate)
     .CreateLogger();
@@ -28,9 +24,7 @@ var repo = new PartyAppRepository(logger);
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
-    logger.Debug("In Development environment");
 }
-else logger.Debug("Not in Development environment");
 
 app.MapGet("/GetMessages", async () =>
 {
@@ -55,18 +49,17 @@ app.MapPost("/InsertMessage", ([FromBody]Message message) =>
     try
     { 
         repo.InsertMessage(message);
-        return Task.FromResult(Results.Ok());
+        return Results.Ok("insert success");
     }
     catch (Exception e)
     {
         var errorText = "Error occurred during runtime could not insert message: " + e.Message + " StackTrace:" +
                         e.StackTrace;
         logger.Error(errorText);
-        return Task.FromResult(Results.Problem(errorText));
-    }
+        return Results.Problem(errorText); }
 });
 
-app.MapPost("/Upvote", (Guid messageGuid) =>
+app.MapPost("/Upvote", ([FromBody]Guid messageGuid) =>
 {
     try
     {
@@ -75,14 +68,13 @@ app.MapPost("/Upvote", (Guid messageGuid) =>
     }
     catch (Exception e)
     {
-        var errorText = "Error occurred during runtime could not upvote message: " + e.Message + " StackTrace:" +
-                        e.StackTrace;
+        var errorText = $"Error occurred during runtime could not upvote message: {e.Message} StackTrace:{e.StackTrace}";
         logger.Error(errorText);
         return Task.FromResult(Results.Problem(errorText));
     }
 });
 
-app.MapPost("/Downvote", (Guid messageGuid) =>
+app.MapPost("/Downvote", ([FromBody]Guid messageGuid) =>
 {
     try
     {

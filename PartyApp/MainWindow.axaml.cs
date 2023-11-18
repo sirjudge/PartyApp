@@ -17,7 +17,7 @@ public partial class MainWindow : Window
     // This is gonna get real big, maybe use sqlite or sql docker container instead
     private List<Message> _chatMessages = new();
     private readonly HttpClient _httpClient;
-    private const string BaseUrl = "http://localhost:5000";
+    private const string BaseUrl = "http://localhost:5046";
     private readonly Logger logger;
     
     public MainWindow()
@@ -82,8 +82,9 @@ public partial class MainWindow : Window
             
         MessageErrorText.IsVisible = false;
         var message = new Message(messageText, name, DateTime.Now);
-        var jsonContent = new StringContent(JsonSerializer.Serialize(message));
-        var response = _httpClient.PostAsync($"{BaseUrl}/InsertMessage", jsonContent).Result;
+        var requestMessage = new HttpRequestMessage(HttpMethod.Post,$"{BaseUrl}/InsertMessage");
+        requestMessage.Content = new StringContent(JsonSerializer.Serialize(message), Encoding.UTF8, "application/json");
+        var response = _httpClient.SendAsync(requestMessage).Result;
         if (!response.IsSuccessStatusCode)
         {
             logger.Error($"response code from InsertMessage not ok:{response.StatusCode}, response:{response.ReasonPhrase}");

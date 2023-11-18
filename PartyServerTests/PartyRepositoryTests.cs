@@ -66,6 +66,7 @@ public class PartyRepositoryTests
         
         foreach (var message in messages)
         {
+            _logger.Information(message.ToString());
            Assert.Multiple(() =>
            {
                Assert.That(!string.IsNullOrWhiteSpace(message.Text), Is.True);
