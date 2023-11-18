@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text;
@@ -35,7 +36,7 @@ public partial class MainWindow : Window
     {
         logger.Information("InitializeChatBox called");
         ChatBox.Text = string.Empty;
-        var messages = new List<Message>();
+        Message[] messages = new Message[] { };
         _chatMessages.Clear();
         try
         {
@@ -53,16 +54,21 @@ public partial class MainWindow : Window
                 return;
             }
 
-            logger.Information($"ResponseString:{responseString.ToString()}");
-            messages = JsonSerializer.Deserialize<List<Message>>(responseString);
+            logger.Information($"ResponseString:{responseString}");
+            // The following line is throwing the following exception:
+            /*
+            System.Text.Json.JsonException: The JSON value could not be converted to 
+            System.Collections.Generic.List`1[PartyModels.Message]. Path: $ | LineNumber: 0 | BytePositionInLine: 815. 
+             */
+            messages = JsonSerializer.Deserialize<Message[]>(responseString);
             _chatMessages.AddRange(messages);
         }
         catch (Exception e)
         {
             logger.Error("Ran into excpetion generating chatbox:" + e.Message + " StackTrace:" + e.StackTrace);
         }
-        logger.Information($"response was ok. Added {messages.Count} messages to the chat list");
-        ChatBox.Text = MessageListToString(_chatMessages);
+        logger.Information("response was ok. Added {MessagesLength:} messages to the chat list", messages.Length);
+        ChatBox.Text = MessageListToString(_chatMessages.ToList());
     }
     
     private void TakePhoto(object sender, RoutedEventArgs e)
