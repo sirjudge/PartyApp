@@ -1,4 +1,6 @@
 using System.Text.Json;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 using PartyModels;
 using PartyServer;
 using Serilog;
@@ -9,6 +11,12 @@ using Serilog.Sinks.SystemConsole.Themes;
 //https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis?view=aspnetcore-8.0
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.ConfigureHttpJsonOptions(options =>
+{
+    options.SerializerOptions.WriteIndented = true;
+    options.SerializerOptions.IncludeFields = true;
+});
+
 var app = builder.Build();
 
 var logger = new LoggerConfiguration()
@@ -29,6 +37,7 @@ app.MapGet("/GetMessages", async () =>
     try
     {
         var messages = repo.GetMessages();
+        logger.Information("GetMessages called successfully with {MessageCount} messages", messages.Count);
         return Results.Json(JsonSerializer.Serialize(messages));
     }
     catch (Exception e)
@@ -40,7 +49,8 @@ app.MapGet("/GetMessages", async () =>
     }
 });
 
-app.MapPost("/InsertMessage", (Message message) =>
+
+app.MapPost("/InsertMessage", ([FromBody]Message message) =>
 {
     try
     { 

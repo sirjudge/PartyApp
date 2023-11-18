@@ -76,24 +76,20 @@ public class PartyAppRepository
 
     public List<Message> GetMessages()
     {
+        _logger.Information($"Executing directory:{Environment.CurrentDirectory}");
+        _logger.Information("opening connection to sqlite Connection: {ConnectionString}", SqliteConnectionString);
         using var connection = new SQLiteConnection(SqliteConnectionString);
         connection.Open();
-
-        const string selectQuery = "SELECT Text,Author,DateSubmitted,Guid FROM Message";
+        const string selectQuery = "select [Id], [Text], [Author], [DateSubmitted], [Guid] from Message";
         using var selectMessagesCommand = new SQLiteCommand(selectQuery, connection);
         selectMessagesCommand.CommandType = CommandType.Text;
         using var reader = selectMessagesCommand.ExecuteReader();
-        if (!reader.HasRows)
-        {
-            _logger.Warning("Could nto find any rows");
-            return new List<Message>();
-        }
-        
         var messages = new List<Message>();
         while (reader.Read())
-            messages.Add(new Message(reader,_logger));
-        
-        _logger.Information("Returning {MessageCount} # of messages", messages.Count);
+        {
+            var message =new Message(reader,_logger);
+            messages.Add(message);
+        }
         return messages;
     }
 
