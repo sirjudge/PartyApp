@@ -8,8 +8,8 @@ using Serilog.Sinks.SystemConsole.Themes;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.ConfigureHttpJsonOptions(options =>
 {
-    options.SerializerOptions.WriteIndented = true;
-    options.SerializerOptions.IncludeFields = true;
+    // options.SerializerOptions.WriteIndented = true;
+    // options.SerializerOptions.IncludeFields = true;
 });
 
 var app = builder.Build();
@@ -32,12 +32,11 @@ app.MapGet("/GetMessages", async () =>
     {
         var messages = repo.GetMessages();
         logger.Information("GetMessages called successfully with {MessageCount} messages", messages.Count);
-        return Results.Json(JsonSerializer.Serialize(messages));
+        return Results.Json(messages);
     }
     catch (Exception e)
     {
-        var errorText = "Error occurred during runtime could not Get message: " + e.Message + " StackTrace:" +
-                        e.StackTrace;
+        var errorText = "Error occurred during runtime could not Get message: " + e.Message + " StackTrace:" + e.StackTrace;
         logger.Error(errorText);
         return Results.Problem(errorText);
     }

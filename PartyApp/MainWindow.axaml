@@ -35,16 +35,17 @@
                     <Label Grid.Row="1" Grid.Column="0">Message</Label>
                     <TextBox Name="MessageBox" Grid.Row="1" Grid.Column="1"></TextBox>
                     <Button Grid.Row="2" Grid.Column="0" Click="LogMessageToDb">Submit</Button>
+                    <Button Grid.Row="3" Grid.Column="0" Click="ResetChat">Init Chat</Button>
                 </Grid>
                 <TextBlock Name="MessageErrorText" Foreground="Red" IsVisible="False">Error: Must submit a name and a message</TextBlock>
             </StackPanel>
         </StackPanel>
-        <StackPanel>
+        <!--<StackPanel>
            <Border Background="Black">
               <TextBlock>Photo-booth</TextBlock> 
            </Border>
             <Button Click="TakePhoto"></Button>
             <Image></Image>
-        </StackPanel>
+        </StackPanel>-->
     </StackPanel>
 </Window>
