@@ -38,6 +38,7 @@
                     <Button Grid.Row="3" Grid.Column="0" Click="ResetChat">Init Chat</Button>
                 </Grid>
                 <TextBlock Name="MessageErrorText" Foreground="Red" IsVisible="False">Error: Must submit a name and a message</TextBlock>
+                <TextBlock Name="DatabaseErrorText" Foreground="Red" IsVisible="False">Error: Could not connect to the database</TextBlock>
             </StackPanel>
         </StackPanel>
         <!--<StackPanel>
@@ -47,5 +48,6 @@
             <Button Click="TakePhoto"></Button>
             <Image></Image>
         </StackPanel>-->
+        
     </StackPanel>
 </Window>

@@ -19,7 +19,8 @@ public partial class MainWindow : Window
     // This is gonna get real big, maybe use sqlite or sql docker container instead
     private List<Message> _chatMessages = new();
     private readonly HttpClient _httpClient;
-    private const string BaseUrl = "http://localhost:5046";
+    private const string BaseUrl = "http://192.168.1.46:5046";
+    // private const string BaseUrl = "http://localhost:5046";
     private readonly Logger logger;
     
     public MainWindow()
@@ -36,7 +37,6 @@ public partial class MainWindow : Window
     
     private void InitializeChatBox()
     {
-        logger.Information("InitializeChatBox called");
         ChatBox.Text = string.Empty;
         var messages = new List<Message>(); 
         _chatMessages.Clear();
@@ -49,23 +49,14 @@ public partial class MainWindow : Window
                 return;
             }
 
-            // var responseString = response.Content.ReadAsStringAsync().Result;
-            // if (responseString is null or "\"[]\"")
-            // {
-            //     logger.Warning("No messages returned from server");
-            //     return;
-            // }
-            
             var messageList = response.Content.ReadFromJsonAsync<List<Message>>().Result;
             if (messageList is null)
             {
                 logger.Warning("No messages returned from server");
                 return;
             }
-            else
-            {
-                logger.Information("Successfully retrieved {MessageCount} messages from server", messageList.Count);
-            }
+            
+            logger.Information("Successfully retrieved {MessageCount} messages from server", messageList.Count);
             
             _chatMessages.AddRange(messageList);
             logger.Information("response was ok. Added {MessagesLength:} messages to the chat list", messages.Count());

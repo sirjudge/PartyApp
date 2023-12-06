@@ -6,6 +6,7 @@ using Serilog;
 using Serilog.Sinks.SystemConsole.Themes;
 
 var builder = WebApplication.CreateBuilder(args);
+
 builder.Services.ConfigureHttpJsonOptions(options =>
 {
     // options.SerializerOptions.WriteIndented = true;
@@ -14,6 +15,9 @@ builder.Services.ConfigureHttpJsonOptions(options =>
 
 var app = builder.Build();
 
+app.Urls.Add("http://localhost:5046");
+app.Urls.Add("http://192.168.1.46:5046");
+app.Urls.Add("http://nuggetBox:5046");
 
 var logger = new LoggerConfiguration()
     .WriteTo.Console(theme: SystemConsoleTheme.Literate)
