@@ -1,3 +1,4 @@
+using System.Net.Mime;
 using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
 using PartyModels;
@@ -15,10 +16,6 @@ builder.Services.ConfigureHttpJsonOptions(options =>
 
 var app = builder.Build();
 
-// app.Urls.Add("http://localhost:5046");
-// app.Urls.Add("http://192.168.1.46:5046");
-// app.Urls.Add("http://nuggetBox:5046");
-
 var logger = new LoggerConfiguration()
     .WriteTo.Console(theme: SystemConsoleTheme.Literate)
     .CreateLogger();
@@ -29,6 +26,8 @@ if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
 }
+
+app.Map("/", async () => Results.Text("hello"));
 
 app.MapGet("/GetMessages", async () =>
 {

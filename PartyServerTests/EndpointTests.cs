@@ -18,7 +18,8 @@ public class EndpointTests
     private string GetEndpointUrl(EndpointType type)
     {
         const int port = 5046;
-        const string baseUrl = "http://localhost:";
+        // const string baseUrl = "http://localhost:";
+        const string baseUrl = "http://192.168.1.46:";
         var endpointUrl = baseUrl + port; 
         return type switch
         {
