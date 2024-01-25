@@ -79,4 +79,10 @@ public class PartyRepositoryTests
            }); 
         }
     }
+
+    [TearDown]
+    public void CleanUp()
+    { 
+        _logger.Dispose();
+    }
 }

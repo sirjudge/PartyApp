@@ -21,9 +21,7 @@
         <PackageReference Include="coverlet.collector" Version="6.0.0"/>
         <PackageReference Include="Serilog.Sinks.Console" Version="5.0.1" />
     </ItemGroup>
-
     <ItemGroup>
       <ProjectReference Include="..\PartyServer\PartyServer.csproj" />
     </ItemGroup>
-
 </Project>

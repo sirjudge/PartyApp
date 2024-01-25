@@ -16,22 +16,15 @@
         <PackageReference Include="Avalonia.Fonts.Inter" Version="11.0.7" />
         <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
         <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.7" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0-rc.2.23480.1" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.1" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.13">
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
           <PrivateAssets>all</PrivateAssets>
         </PackageReference>
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.12" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.1" />
         <PackageReference Include="Serilog.Sinks.Console" Version="5.0.0" />
         <PackageReference Include="SQLite" Version="3.13.0" />
     </ItemGroup>
-
-
-    <ItemGroup>
-      <Folder Include="obj\Debug\net8.0\Avalonia\" />
-    </ItemGroup>
-
-
     <ItemGroup>
       <ProjectReference Include="..\PartyModels\PartyModels.csproj" />
     </ItemGroup>
