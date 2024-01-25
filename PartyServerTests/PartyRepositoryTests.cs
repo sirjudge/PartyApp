@@ -24,10 +24,12 @@ public class PartyRepositoryTests
     public void InitializePartyRepository()
     {
         var repo = new PartyAppRepository(_logger);
-        Assert.NotNull(repo);
-        Assert.True(File.Exists("party.db"));
+        Assert.Multiple(() =>
+        {
+            Assert.That(repo, Is.Not.Null);
+            Assert.That(File.Exists("party.db"));
+        });
     }
-  
 
     [Test]
     public void InsertInvalidMessageFails()
