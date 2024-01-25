@@ -19,7 +19,8 @@ public partial class MainWindow : Window
     // This is gonna get real big, maybe use sqlite or sql docker container instead
     private List<Message> _chatMessages = new();
     private readonly HttpClient _httpClient;
-    private const string BaseUrl = "http://192.168.1.46:5046";
+    // private const string BaseUrl = "http://192.168.1.46:5046";
+    private const string BaseUrl = "http://nuggetbox:5046";
     // private const string BaseUrl = "http://localhost:5046";
     private readonly Logger logger;
     

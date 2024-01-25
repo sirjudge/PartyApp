@@ -42,6 +42,7 @@ public class PartyRepositoryTests
         catch (Exception e)
         {
             //ignore because it's as expected
+            // if we call assert.pass it'll 
         }
     }
  
