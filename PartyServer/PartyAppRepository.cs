@@ -119,4 +119,18 @@ public class PartyAppRepository
         _logger.Information("Downvote called for guid {Guid}", messageGuid.ToString("D"));
         throw new NotImplementedException();
     }
+
+    public int DeleteAllMessages()
+    {
+       _logger.Information("Delete all messages called");
+       using var sqliteConnection = new SQLiteConnection(SqliteConnectionString);
+       sqliteConnection.Open();
+       using var sqliteQuery = new SQLiteCommand("DELETE FROM Message", sqliteConnection);
+       var rowsDeleted = sqliteQuery.ExecuteNonQuery();
+       if (rowsDeleted == 0)
+           _logger.Error("no rows deleted");
+       else
+           _logger.Information("Successfully deleted all messages from database");
+       return rowsDeleted;
+    }
 }

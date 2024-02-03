@@ -1,5 +1,6 @@
 using System.Net.Mime;
 using System.Text.Json;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using PartyModels;
 using PartyServer;
@@ -95,6 +96,38 @@ app.MapGet("/HealthCheck", () =>
 {
     logger.Information("Health check called successfully");
     return Results.Ok("success");
+});
+
+app.MapDelete("DeleteAllMessages", () =>
+{
+    try
+    {
+        var rowsDeleted = repo.DeleteAllMessages();
+        return Results.Ok("deleted all messages successfully. Rows deleted:" + rowsDeleted);
+    }
+    catch (Exception e)
+    {
+        var errorText = "Error occurred during runtime could not delete all messages: " + e.Message + " StackTrace:" +
+                        e.StackTrace;
+        logger.Error(errorText);
+        return Results.Problem(errorText);
+    }
+});
+
+app.MapDelete("DeleteMessage", ([FromBody]Message message) =>
+{
+    try
+    {
+        repo.DeleteMessage(message);
+        return Results.Ok("success");
+    }
+    catch (Exception e)
+    {
+        var errorText = "Error occurred during runtime could not delete message: " + e.Message + " StackTrace:" +
+                        e.StackTrace;
+        logger.Error(errorText);
+        return Results.Problem(errorText);
+    }
 });
 
 app.Run();

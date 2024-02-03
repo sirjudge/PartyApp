@@ -22,4 +22,8 @@
       <PackageReference Include="System.Data.SQLite" Version="1.0.118" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Remove="party.db" />
+    </ItemGroup>
+
 </Project>
