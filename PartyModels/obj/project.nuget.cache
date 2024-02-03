@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "1WMAW6dcs+M4iQkTuJIb8WHHxWHbvvOWTSjUe01U6lmJrRURs4zdmox6eLWUL/RE0H8TvnEpayQ2l3Q+04F/wQ==",
+  "success": true,
+  "projectFilePath": "/home/nico/solutions/PartyApp/PartyModels/PartyModels.csproj",
+  "expectedPackageFiles": [
+    "/home/nico/.nuget/packages/serilog/3.1.2-dev-02097/serilog.3.1.2-dev-02097.nupkg.sha512"
+  ],
+  "logs": []
+}

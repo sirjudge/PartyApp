@@ -5,6 +5,7 @@
       <map>
         <entry key="PartyApp/App.axaml" value="PartyApp/PartyApp.csproj" />
         <entry key="PartyApp/MainWindow.axaml" value="PartyApp/PartyApp.csproj" />
+        <entry key="PartyApp/PhotoBooth.axaml" value="PartyApp/PartyApp.csproj" />
       </map>
     </option>
   </component>

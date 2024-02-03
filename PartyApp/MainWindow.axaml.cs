@@ -124,4 +124,10 @@ public partial class MainWindow : Window
 
         InitializeChatBox();
     }
+
+    private void OpenPhotoBooth(object? sender, RoutedEventArgs e)
+    {
+        var dialog = new PhotoBoothWindow();
+        dialog.Show();
+    }
 }

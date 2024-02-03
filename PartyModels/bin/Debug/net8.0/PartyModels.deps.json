@@ -1,0 +1,41 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "PartyModels/1.0.0": {
+        "dependencies": {
+          "Serilog": "3.1.2-dev-02097"
+        },
+        "runtime": {
+          "PartyModels.dll": {}
+        }
+      },
+      "Serilog/3.1.2-dev-02097": {
+        "runtime": {
+          "lib/net7.0/Serilog.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "3.1.2.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PartyModels/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Serilog/3.1.2-dev-02097": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1kANtrvBOCcB/+rUuwCEoeDOdNhwjE1Rtk2AS+MF34DRhxxOjm5tTUbudWTvlBcIChmbQxW3K4Yr0dOn3+hcGA==",
+      "path": "serilog/3.1.2-dev-02097",
+      "hashPath": "serilog.3.1.2-dev-02097.nupkg.sha512"
+    }
+  }
+}

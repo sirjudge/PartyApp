@@ -42,12 +42,11 @@
                 <TextBlock Name="DatabaseErrorText" Foreground="Red" IsVisible="False">Error: Could not connect to the database</TextBlock>
             </StackPanel>
         </StackPanel>
-        <!--<StackPanel>
+        <StackPanel>
            <Border Background="Black">
               <TextBlock>Photo-booth</TextBlock> 
            </Border>
-            <Button Click="TakePhoto"></Button>
-            <Image></Image>
-        </StackPanel>-->
+            <Button Click="OpenPhotoBooth">Open Photo Booth</Button>
+        </StackPanel>
     </StackPanel>
 </Window>

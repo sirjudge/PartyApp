@@ -1,0 +1,13 @@
+/home/nico/solutions/PartyApp/PartyModels/bin/Debug/net8.0/PartyModels.deps.json
+/home/nico/solutions/PartyApp/PartyModels/bin/Debug/net8.0/PartyModels.dll
+/home/nico/solutions/PartyApp/PartyModels/bin/Debug/net8.0/PartyModels.pdb
+/home/nico/solutions/PartyApp/PartyModels/obj/Debug/net8.0/PartyModels.csproj.AssemblyReference.cache
+/home/nico/solutions/PartyApp/PartyModels/obj/Debug/net8.0/PartyModels.GeneratedMSBuildEditorConfig.editorconfig
+/home/nico/solutions/PartyApp/PartyModels/obj/Debug/net8.0/PartyModels.AssemblyInfoInputs.cache
+/home/nico/solutions/PartyApp/PartyModels/obj/Debug/net8.0/PartyModels.AssemblyInfo.cs
+/home/nico/solutions/PartyApp/PartyModels/obj/Debug/net8.0/PartyModels.csproj.CoreCompileInputs.cache
+/home/nico/solutions/PartyApp/PartyModels/obj/Debug/net8.0/PartyModels.sourcelink.json
+/home/nico/solutions/PartyApp/PartyModels/obj/Debug/net8.0/PartyModels.dll
+/home/nico/solutions/PartyApp/PartyModels/obj/Debug/net8.0/refint/PartyModels.dll
+/home/nico/solutions/PartyApp/PartyModels/obj/Debug/net8.0/PartyModels.pdb
+/home/nico/solutions/PartyApp/PartyModels/obj/Debug/net8.0/ref/PartyModels.dll

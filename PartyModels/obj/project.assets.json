@@ -1,0 +1,116 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0": {
+      "Serilog/3.1.2-dev-02097": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/Serilog.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Serilog.dll": {
+            "related": ".xml"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Serilog/3.1.2-dev-02097": {
+      "sha512": "1kANtrvBOCcB/+rUuwCEoeDOdNhwjE1Rtk2AS+MF34DRhxxOjm5tTUbudWTvlBcIChmbQxW3K4Yr0dOn3+hcGA==",
+      "type": "package",
+      "path": "serilog/3.1.2-dev-02097",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.png",
+        "lib/net462/Serilog.dll",
+        "lib/net462/Serilog.xml",
+        "lib/net471/Serilog.dll",
+        "lib/net471/Serilog.xml",
+        "lib/net5.0/Serilog.dll",
+        "lib/net5.0/Serilog.xml",
+        "lib/net6.0/Serilog.dll",
+        "lib/net6.0/Serilog.xml",
+        "lib/net7.0/Serilog.dll",
+        "lib/net7.0/Serilog.xml",
+        "lib/netstandard2.0/Serilog.dll",
+        "lib/netstandard2.0/Serilog.xml",
+        "lib/netstandard2.1/Serilog.dll",
+        "lib/netstandard2.1/Serilog.xml",
+        "serilog.3.1.2-dev-02097.nupkg.sha512",
+        "serilog.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0": [
+      "Serilog >= 3.1.2-dev-02097"
+    ]
+  },
+  "packageFolders": {
+    "/home/nico/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/home/nico/solutions/PartyApp/PartyModels/PartyModels.csproj",
+      "projectName": "PartyModels",
+      "projectPath": "/home/nico/solutions/PartyApp/PartyModels/PartyModels.csproj",
+      "packagesPath": "/home/nico/.nuget/packages/",
+      "outputPath": "/home/nico/solutions/PartyApp/PartyModels/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/home/nico/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net8.0": {
+        "targetAlias": "net8.0",
+        "dependencies": {
+          "Serilog": {
+            "target": "Package",
+            "version": "[3.1.2-dev-02097, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/home/nico/.dotnet/sdk/8.0.101/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
